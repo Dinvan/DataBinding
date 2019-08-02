@@ -12,12 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--<activity android:name=".DataBindingWithLiveData"></activity>-->
+
         <activity
             android:name=".UsersList"
-            android:label="@string/title_activity_users_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
             <intent-filter>

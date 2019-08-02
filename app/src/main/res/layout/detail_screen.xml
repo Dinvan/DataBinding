@@ -2,9 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/studentDetail"
@@ -45,8 +45,8 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_below="@+id/txtStudentName"
+            android:layout_marginTop="8dp"
             android:background="#FFFACD"
             android:orientation="horizontal">
 
@@ -54,21 +54,20 @@
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/scoreLayout"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-               >
+                android:layout_weight="1">
 
 
                 <TextView
                     android:id="@+id/labelRollNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:text="Emp. Id"
                     android:textColor="@color/colorPrimary"
                     android:textSize="15dp"
                     android:textStyle="bold"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@+id/labelResult"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -92,14 +91,12 @@
                     android:id="@+id/labelResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:text="Result"
                     android:textColor="@color/colorPrimary"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    app:layout_constraintRight_toLeftOf="@+id/labelTotalMarks"
                     app:layout_constraintStart_toEndOf="@+id/barrier"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,14 +120,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginEnd="155dp"
-                    android:layout_marginRight="155dp"
+                    android:layout_marginRight="16dp"
                     android:text="Total"
                     android:textColor="@color/colorPrimary"
                     android:textSize="15dp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintLeft_toRightOf="@+id/labelResult"
+                    app:layout_constraintStart_toEndOf="@+id/labelResult"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -171,11 +166,13 @@
         </LinearLayout>
     </LinearLayout>
 
-   <TableLayout
-       android:layout_below="@+id/studentDetail"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:background="#E0E0E0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/studentDetail">
 
-   </TableLayout>
+    </TableLayout>
 
 </RelativeLayout>
