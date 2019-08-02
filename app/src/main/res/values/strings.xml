@@ -96,4 +96,6 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="select_city">Select City</string>
+    <string name="select_your_city_and_start_exploring_offers_around_you">Select your city and start exploring offers around you</string>
 </resources>
