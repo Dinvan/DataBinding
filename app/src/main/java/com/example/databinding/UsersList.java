@@ -2,10 +2,7 @@ package com.example.databinding;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
@@ -13,16 +10,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.databinding.databinding.UserList;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class UsersList extends AppCompatActivity {
     private TableLayout tableLayout;
@@ -45,8 +35,6 @@ public class UsersList extends AppCompatActivity {
                 "SName"
                 , "MM"
                 , "OM", "GR"
-
-
         };
         List<UserData> userDataList = new ArrayList<>();
         UserData userData = new UserData();
@@ -86,7 +74,6 @@ public class UsersList extends AppCompatActivity {
         userData.setsName("Animation");
         userDataList.add(userData);
 
-
         userData = new UserData();
         userData.setGr("C");
         userData.setMm(100);
@@ -119,11 +106,11 @@ public class UsersList extends AppCompatActivity {
         tableRowList.add(tableRowHeader);
 
         for (int dataListIndex = 0; dataListIndex < userDataList.size(); dataListIndex++) {
+
             final UserData userData1 = userDataList.get(dataListIndex);
             TableRow tableRow = new TableRow(UsersList.this);
 
             TableHelper.addTextViewColumn(tableRow, userData1.getsName(),Typeface.BOLD,Color.parseColor("#000000"), LinearLayout.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, UsersList.this);
-
             TableHelper.addTextViewColumn(tableRow, userData1.getMm() + "",Typeface.NORMAL,Color.parseColor("#656565"), LinearLayout.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, UsersList.this);
             TableHelper.addTextViewColumn(tableRow, userData1.getOm() + "",Typeface.NORMAL,Color.parseColor("#656565"), LinearLayout.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, UsersList.this);
             TableHelper.addTextViewColumn(tableRow, userData1.getGr() + "",Typeface.NORMAL,Color.parseColor("#656565"), LinearLayout.LayoutParams.WRAP_CONTENT, Gravity.CENTER_HORIZONTAL, UsersList.this);
@@ -136,7 +123,6 @@ public class UsersList extends AppCompatActivity {
                     Toast.makeText(UsersList.this, "Hello " + userData1.getsName(), Toast.LENGTH_SHORT).show();
                 }
             });
-
         }
 
         for (int i = 0; i < tableRowList.size(); i++) {

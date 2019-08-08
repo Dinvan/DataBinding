@@ -17,21 +17,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         userDetailModel = new UserDetailModel();
         userDetailModel.setAddress("10,Nanda Nagar Indore");
         userDetailModel.setEmailAddress("dinesh.b@advanz101.com");
         userDetailModel.setName("Dinesh Bagvan");
 
         MainActivityBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        //mainBinding.txtEmailAddress.setText(userDetailModel.getEmailAddress());
-        //mainBinding.txtFirstName.setText(userDetailModel.getName());
         mainBinding.setUserDetail(userDetailModel);
         onClickHandler=new OnClickHandler(this);
         mainBinding.setClickListener(onClickHandler);
-
-
-
-    }
+   }
 
 
     public class OnClickHandler {

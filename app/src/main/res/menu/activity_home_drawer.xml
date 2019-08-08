@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_offers"
+            android:icon="@drawable/ic_local_offer"
+            android:title="@string/menu_offers" />
+        <item
+            android:id="@+id/nav_rateus"
+            android:icon="@drawable/ic_rate_review"
+            android:title="@string/menu_rate_us" />
+        <item
+            android:id="@+id/nav_terms_of_use"
+            android:icon="@drawable/ic_term_of_use"
+            android:title="@string/menu_terms_of_use" />
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:icon="@drawable/ic_privacy_policy"
+            android:title="@string/menu_privacy_policy" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="@string/menu_share" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout" />
+        <item
+            android:id="@+id/nav_version"
+            android:title="@string/menu_version" />
+    </group>
+
+
+
+</menu>

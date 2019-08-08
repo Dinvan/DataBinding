@@ -3,7 +3,6 @@ package com.example.databinding;
 import android.databinding.BindingAdapter;
 import android.graphics.Color;
 import android.widget.Button;
-
 import java.util.HashMap;
 
 public class BindingUtils {
