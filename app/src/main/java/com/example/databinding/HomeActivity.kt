@@ -8,9 +8,15 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import android.support.v4.widget.DrawerLayout
 import android.support.design.widget.NavigationView
+import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.TextView
+import kotlinx.android.synthetic.main.app_version.*
+import kotlinx.android.synthetic.main.nav_header_home.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,7 +40,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+
+        val itemVersion = MenuItemCompat.getActionView(navView.menu.findItem(R.id.nav_logout)) as LinearLayout
+        val txtAppVersion = itemVersion.findViewById<View>(R.id.txtAppVersion) as TextView
+        txtAppVersion.text = "Ver: "  +BindingUtils.getVersionName(this)
+
+
+        val navHeader = navView.getHeaderView(0)
+        val txtShopName = navHeader.findViewById(R.id.txtShopName) as TextView
+        val txtAddress = navHeader.findViewById(R.id.txtAddress) as TextView
+
+        txtShopName.text="Hello"
+        txtAddress.text="101,Indore"
     }
+
+
 
     override fun onBackPressed() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)

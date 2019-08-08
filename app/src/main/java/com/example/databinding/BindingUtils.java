@@ -1,5 +1,8 @@
 package com.example.databinding;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.databinding.BindingAdapter;
 import android.graphics.Color;
 import android.widget.Button;
@@ -25,5 +28,40 @@ public class BindingUtils {
     @BindingAdapter("setMonthTextColor")
     public static void setMonthTextColor(Button button, int month) {
         button.setTextColor(Color.parseColor(monthColorMap.get(month)));
+    }
+
+
+    /**
+     * Get version name of application.
+     * @param context reference to get application resources
+     * @return returns version name
+     */
+    public static String getVersionName(Context context) {
+        String versionName = "";
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            versionName = packageInfo.versionName;
+            return versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    /**
+     * Get version code of application.
+     * @param context reference to get application resources
+     * @return returns version code
+     */
+    public static int getVersionCode(Context context) {
+        int versionCode=0 ;
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            versionCode = packageInfo.versionCode;
+            return versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return versionCode;
     }
 }
